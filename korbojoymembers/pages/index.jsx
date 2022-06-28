@@ -1,9 +1,11 @@
 import { checkCookies, setCookies } from "cookies-next";
 import { useRouter } from "next/router";
+import {useEffect } from 'react'
 
 function Index(props) {
   const router = useRouter();
   const token1 = router.query.token;
+  useEffect(() => {
   setCookies("token", token1);
   const checkToken = checkCookies("token");
 
@@ -14,6 +16,7 @@ function Index(props) {
   } else {
     window.location.href = API_MAIN;
   }
+   })
   return <div>index</div>;
 }
 
