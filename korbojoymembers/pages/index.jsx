@@ -16,7 +16,7 @@ function Index(props) {
   } else {
     window.location.href = API_MAIN;
   }
-   })
+   },[])
   return <div>index</div>;
 }
 
